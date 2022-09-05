@@ -15,13 +15,13 @@ import com.aulas.entidades.Produto;
 import com.aulas.servico.ProdutoServico;
 
 @RestController
-@RequestMapping("/produto")
+@RequestMapping("/")
 public class ProdutoControlador {
 	
 	@Autowired
 	ProdutoServico servico;
 	
-	@GetMapping("/")
+	@GetMapping("/produto")
 	public ResponseEntity<List<Produto>> consutar(){
 		return ResponseEntity.status(HttpStatus.OK).body(servico.consultarProdutos());
 	}
